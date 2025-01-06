@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.example.KafkaSetupAvroSchema.model;
+
+message Student {
+  string studentName = 1;
+  string studentId = 2;
+  int32 age = 3;
+}
