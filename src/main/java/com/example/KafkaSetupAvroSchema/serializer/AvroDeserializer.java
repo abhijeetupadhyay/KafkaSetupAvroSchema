@@ -33,11 +33,9 @@ public class AvroDeserializer<T extends SpecificRecordBase> implements Deseriali
                 DatumReader<GenericRecord> datumReader = new SpecificDatumReader<>(targetType.newInstance().getSchema());
                 Decoder decoder = DecoderFactory.get().binaryDecoder(bytes, null);
                 returnObject = (T) datumReader.read(null, decoder);
-//                log.info("deserialized data='{}'", returnObject.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
-//            log.error("Unable to Deserialize bytes[] ", e);
         }
 
         return returnObject;
