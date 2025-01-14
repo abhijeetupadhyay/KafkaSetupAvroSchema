@@ -1,19 +1,36 @@
 {
-  "namespace": "com.example.KafkaSetupAvroSchema.model",
   "type": "record",
   "name": "Student",
   "fields": [
     {
-      "name": "studentName",
-      "type": "string"
+      "name": "Metadata",
+      "type": {
+        "type": "record",
+        "name": "Metadata",
+        "fields": [
+          {
+            "name": "JourneyId",
+            "type": "string"
+          },
+          {
+            "name": "JourneyName",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
-      "name": "studentId",
-      "type": "string"
-    },
-    {
-      "name": "age",
-      "type": "int"
+      "name": "Data",
+      "type": {
+        "type": "record",
+        "name": "data",
+        "fields": [
+          {
+            "name": "data",
+            "type": "string"
+          }
+        ]
+      }
     }
   ]
 }
